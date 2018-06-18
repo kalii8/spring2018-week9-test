@@ -13,19 +13,19 @@
     <a href="#" class="report">Report an emergency</a>
 
     <div class="heroes">
-        <a href="#">
+        <a href="{{ action('HeroController@show', ['hero_slug' => 'aquaman']) }}">
             <img src="img/aquaman.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{ action('HeroController@show', ['hero_slug' => 'batman']) }}">
             <img src="img/batman.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{ action('HeroController@show', ['hero_slug' => 'cyborg']) }}">
             <img src="img/cyborg.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{ action('HeroController@show', ['hero_slug' => 'flash']) }}">
             <img src="img/flash.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{ action('HeroController@show', ['hero_slug' => 'wonderwoman']) }}">
             <img src="img/wonderwoman.jpg" alt="">
         </a>
     </div>

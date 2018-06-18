@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class EmergencyController extends Controller
 {
     //
-    public function store(Request $request, $hero)
+    public function store(Request $request, $slug)
     {
         $emergency = new \App\Emergency();
         $emergency->fill([
@@ -16,8 +16,10 @@ class EmergencyController extends Controller
         ]);
 
         $emergency->save();
+        session()->flash('success_message', 'Success!');
 
-        return redirect()->action('HeroController@show', $hero);
+        return redirect()->action('HeroController@show', $slug);
 
+        
     }
 }

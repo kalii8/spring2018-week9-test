@@ -26,7 +26,6 @@
 
     <section class="emergency-report">
         <h2>Report an emergency</h2>
-
         <form action="{{ action('EmergencyController@store', [$hero->slug]) }}" method="post">
         {{ csrf_field() }}
 
@@ -35,6 +34,7 @@
             <textarea name="description" placeholder="Thorough description"></textarea>
 
             <input type="submit" value="Send to the Watchtower">
+            @include('alert')
         </form>
     </section>
 
