@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 class HeroController extends Controller
 {
     //
+
+    public function index()
+    {   
+        $heroes = \App\Hero::all()->sortBy('name');
+        $view = view('hero.index');
+        $view->heroes = $heroes;
+        return $view;
+
+    }
+
     public function show($hero_slug)
     {
         $hero = \App\Hero::where('slug', $hero_slug)->first();
@@ -19,4 +29,5 @@ class HeroController extends Controller
         $view->hero = $hero;
         return $view;
     }
+
 }
